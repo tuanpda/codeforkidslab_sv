@@ -9,10 +9,10 @@ const path = require("path");
 var storage = multer.diskStorage({
   destination: function (req, file, cb) {
     /* Nhớ sửa đường dẫn khi deploy lên máy chủ */
-    // đường dẫn cho máy home
     cb(
       null,
-      "/Users/apple/Documents/code/p_Codeforkidslab/frontend_/static/upload/"
+      // "/Users/apple/Documents/code/p_Codeforkidslab/frontend_/static/upload/" -- macos
+      "E:\\CODE_APP\\CODEFORKIDSLAB\\codeforkidslab\\static\\upload"
     );
   },
   filename: function (req, file, cb) {
