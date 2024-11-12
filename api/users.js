@@ -381,7 +381,7 @@ router.post("/auth/login", async (req, res, next) => {
 
 /* Tạo user auth kèm token */
 router.post("/account", upload.single("avatar"), async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   var password = req.body.password;
   const encryptedPassword = await bcrypt.hash(password, 10);
 

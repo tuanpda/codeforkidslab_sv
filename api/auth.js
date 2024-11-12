@@ -28,7 +28,7 @@ var upload = multer({ storage: storage });
 
 /* Login user auth */
 router.post("/access/login", async (req, res, next) => {
-  console.log(req.body);
+  // console.log(req.body);
 
   const username = req.body.username;
   const password = req.body.password;
@@ -39,7 +39,7 @@ router.post("/access/login", async (req, res, next) => {
       .input("username", username)
       .query(`SELECT * FROM users WHERE username = @username`);
     const user = result.recordset[0];
-    console.log(user);
+    // console.log(user);
 
     if (!user) {
       res.status(403).json({
@@ -117,7 +117,7 @@ router.post("/active/user", async (req, res) => {
 });
 
 router.post("/precallresetpass", async (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
   // const password = req.body.password;
   // const newPassword = req.body.newPassword;
 
@@ -170,7 +170,7 @@ router.post("/callresetpass", async (req, res) => {
       )}`;
 
       const encryptedPassword = await bcrypt.hash(newPassword, 10);
-      console.log(encryptedPassword);
+      // console.log(encryptedPassword);
 
       await pool
         .request()

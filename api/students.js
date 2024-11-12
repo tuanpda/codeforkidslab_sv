@@ -170,7 +170,7 @@ router.post("/delete/student", async (req, res) => {
             console.error("Đã xảy ra lỗi khi xóa tệp:", err);
             return;
           }
-          console.log("Tệp đã được xóa thành công");
+          // console.log("Tệp đã được xóa thành công");
         });
       }
 
