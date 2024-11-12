@@ -43,7 +43,8 @@ router.post("/course-update", upload.single("img"), async (req, res) => {
   if (!req.file) {
     linkImage = req.body.img;
   } else {
-    linkImage = `http://localhost:1186/upload/${req.file.filename}`;
+    // linkImage = `http://localhost:1186/upload/${req.file.filename}`;
+    linkImage = `http://14.224.129.177:1186/upload/${req.file.filename}`;
   }
 
   try {
@@ -57,7 +58,8 @@ router.post("/course-update", upload.single("img"), async (req, res) => {
     if (course) {
       // xóa file ảnh cũ trong thư mục
       const basePath =
-        "/Users/apple/Documents/code/p_Codeforkidslab/frontend_/static/upload/";
+        // "/Users/apple/Documents/code/p_Codeforkidslab/frontend_/static/upload/";
+        "E:\\CODE_APP\\CODEFORKIDSLAB\\codeforkidslab\\static\\upload";
       const fileName = path.basename(course.img);
       // Ghép đường dẫn và tên tệp bằng phương thức path.join()
       const filePath = path.join(basePath, fileName);
@@ -104,7 +106,8 @@ router.post("/create-course", upload.single("img"), async (req, res) => {
   if (!req.file) {
     linkImage = req.body.img;
   } else {
-    linkImage = `http://localhost:1186/upload/${req.file.filename}`;
+    // linkImage = `http://localhost:1186/upload/${req.file.filename}`;
+    linkImage = `http://14.224.129.177:1186/upload/${req.file.filename}`;
   }
   try {
     await pool.connect();
@@ -149,7 +152,8 @@ router.post("/delete/course", async (req, res) => {
     if (course) {
       // xóa file trong thư mục
       const basePath =
-        "/Users/apple/Documents/code/p_Codeforkidslab/frontend_/static/upload/";
+        // "/Users/apple/Documents/code/p_Codeforkidslab/frontend_/static/upload/";
+        "E:\\CODE_APP\\CODEFORKIDSLAB\\codeforkidslab\\static\\upload";
       const fileName = path.basename(req.body.img);
       // Ghép đường dẫn và tên tệp bằng phương thức path.join()
       const filePath = path.join(basePath, fileName);
